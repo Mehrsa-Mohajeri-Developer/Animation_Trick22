@@ -1,0 +1,81 @@
+ body {
+     background-color: black;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 100vh;
+     overflow: hidden;
+ }
+
+ .box {
+     width: 400px;
+     height: 100px;
+     position: relative;
+
+     /* background-color: aqua; */
+     /* clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 60%); */
+     &:hover>a:nth-of-type(2) {
+         color: rgb(0, 0, 0);
+         /* background-color: azure; */
+         clip-path: inset(40px 50px 40px 50px);
+         animation: anime1 .4s ease-in-out forwards;
+     }
+
+     &:hover>a:nth-of-type(3) {
+         color: rgb(0, 0, 0);
+         /* background-color: azure; */
+         clip-path: inset(40px 50px 40px 50px);
+         animation: anime2 .4s ease-in-out forwards;
+     }
+
+     >a {
+         width: 99%;
+         height: 100%;
+         background-color: crimson;
+         position: absolute;
+         left: 0;
+         top: 0;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         text-decoration: none;
+         font-size: 50px;
+         font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+         color: black;
+         font-weight: bold;
+         clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%, 0 60%);
+     }
+ }
+
+ @keyframes anime1 {
+     20% {
+         transform: translateX(10px) translateY(5px) scale(1.2);
+         color: rgb(0, 255, 234);
+     }
+
+     40% {
+         transform: translateX(-20px) translateY(-10px) scale(1.4);
+         color: rgb(0, 255, 234);
+     }
+
+     60%,
+     100% {
+         transform: translateX(0) translateY(0) scale(1);
+     }
+ }
+
+ @keyframes anime2 {
+     20% {
+         transform: translateX(-20px) translateY(-35px) scale(1.2);
+     }
+
+     40% {
+         transform: translateX(20px) translateY(20px) scale(1.4);
+     }
+
+     60%,
+     100% {
+         transform: translateX(0) translateY(0) scale(1);
+     }
+ }
